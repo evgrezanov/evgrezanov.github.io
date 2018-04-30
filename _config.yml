@@ -1,6 +1,6 @@
 # Site
 title:              Evgeniy Rezanov
-bio:                'WordPress developer.'
+bio:                'WordPress Consultations, Customization and Plugin Development'
 description:        "Personal blog, CV and contacts."
 reading_time:       true
 words_per_minute:   200
@@ -38,9 +38,9 @@ disqus_shortname:   taylantatli
 #bing-verify:
 email:              evgrezanov@gmail.com
 twitter:            eredmonkey
-facebook:           evgeniy.redmonkey
+facebook:           wphireagency
 github-url:         evgrezanov
-stackoverflow:      4472869/eredmonkey   #from a "http://stackoverflow.com/users/123456/username" link
+#stackoverflow:      4472869/eredmonkey   
 linkedin:           evgeniy-rezanov
 #xing:              username
 #instagram:          username
