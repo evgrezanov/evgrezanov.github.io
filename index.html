@@ -38,13 +38,23 @@
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 20px;
+            justify-content: center;
         }
         .skill {
-            background-color: #3498db;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80px;
+        }
+        .skill i {
+            font-size: 32px;
+            margin-bottom: 5px;
+            color: #3498db;
+        }
+        .skill span {
+            font-size: 12px;
         }
         .profile-photo {
             width: 150px;
@@ -159,17 +169,17 @@
 
     <h3 id="skills">Key Skills</h3>
     <div class="skills">
-        <span class="skill">PHP</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">WordPress</span>
-        <span class="skill">WooCommerce</span>
-        <span class="skill">MySQL</span>
-        <span class="skill">PosgreSQL</span>
-        <span class="skill">MS SQL</span>
-        <span class="skill">Redis</span>
-        <span class="skill">Memcached</span>
-        <span class="skill">VueJS</span>
-        <span class="skill">GatsbyJS</span>
+        <div class="skill"><i class="fab fa-php"></i><span>PHP</span></div>
+        <div class="skill"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="skill"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+        <div class="skill"><i class="fab fa-wordpress"></i><span>WooCommerce</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>MySQL</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>MS SQL</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>Redis</span></div>
+        <div class="skill"><i class="fas fa-database"></i><span>Memcached</span></div>
+        <div class="skill"><i class="fab fa-vuejs"></i><span>VueJS</span></div>
+        <div class="skill"><i class="fab fa-react"></i><span>GatsbyJS</span></div>
     </div>
 
     <h3 id="github">GitHub Contributions</h3>
