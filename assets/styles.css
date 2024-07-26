@@ -183,3 +183,7 @@ h1, h2, h3 {
 .skill span {
     font-size: 12px;
 }
+.error {
+    color: red;
+    font-weight: bold;
+}
