@@ -229,58 +229,109 @@
         }
     </script>
 
-<h3 id="projects">Projects</h3>
-<div class="projects" id="projectsContainer">
-    <!-- Projects will be dynamically added here -->
+<h3 id="reviews">Client Reviews</h3>
+<div class="reviews" id="reviewsContainer">
+    <!-- Reviews will be dynamically added here -->
 </div>
 
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage">
+</div>
+
+<style>
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.review-card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.review-card:hover {
+    transform: scale(1.05);
+}
+.review-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80%;
+    object-fit: contain;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+
 <script>
-    function toggleMenu() {
-        var overlay = document.getElementById("overlay");
-        if (overlay.style.display === "flex") {
-            overlay.style.display = "none";
-        } else {
-            overlay.style.display = "flex";
+function loadReviews() {
+    const reviewsData = [
+        { "image": "img/review1.jpg", "width": 300, "height": 200 },
+        { "image": "img/review2.jpg", "width": 200, "height": 300 },
+        { "image": "img/review3.jpg", "width": 250, "height": 250 },
+        { "image": "img/review4.jpg", "width": 350, "height": 150 },
+        { "image": "img/review5.jpg", "width": 200, "height": 200 },
+        // Добавьте остальные отзывы здесь, всего 20
+    ];
+
+    const reviewsContainer = document.getElementById('reviewsContainer');
+
+    reviewsData.forEach((review, index) => {
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'review-card';
+        reviewCard.style.width = `${review.width}px`;
+        reviewCard.style.height = `${review.height}px`;
+        reviewCard.innerHTML = `<img src="${review.image}" alt="Client Review ${index + 1}">`;
+        reviewCard.onclick = () => openLightbox(review.image);
+        reviewsContainer.appendChild(reviewCard);
+    });
+}
+
+    function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        lightbox.style.display = 'flex';
+        lightboxImg.src = imageSrc;
+    }
+
+    document.querySelector('.close').onclick = function() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('lightbox')) {
+            document.getElementById('lightbox').style.display = 'none';
         }
     }
 
-    // Добавляем функцию для загрузки проектов
-    function loadProjects() {
-        const projectsData = [
-            {
-                "name": "Project 1",
-                "description": "This is a description of project 1. It was an exciting venture into web development.",
-                "image": "https://via.placeholder.com/300x150?text=Project+1"
-            },
-            {
-                "name": "Project 2",
-                "description": "Project 2 was a challenging but rewarding experience in backend development.",
-                "image": "https://via.placeholder.com/300x150?text=Project+2"
-            },
-            {
-                "name": "Project 3",
-                "description": "For Project 3, we delved into mobile app development using React Native.",
-                "image": "https://via.placeholder.com/300x150?text=Project+3"
-            }
-            // Добавьте больше проектов по необходимости
-        ];
-
-        const projectsContainer = document.getElementById('projectsContainer');
-
-        projectsData.forEach(project => {
-            const projectCard = document.createElement('div');
-            projectCard.className = 'project-card';
-            projectCard.innerHTML = `
-                <img src="${project.image}" alt="${project.name}">
-                <h4>${project.name}</h4>
-                <p>${project.description}</p>
-            `;
-            projectsContainer.appendChild(projectCard);
-        });
-    }
-
-    // Вызываем функцию загрузки проектов при загрузке страницы
-    window.onload = loadProjects;
+    window.onload = loadReviews;
 </script>
 </body>
 </html>
