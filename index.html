@@ -74,9 +74,52 @@
         .bmc-btn {
             height: 36px;
         }
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .overlay-content {
+            text-align: center;
+        }
+        .overlay a {
+            color: white;
+            font-size: 24px;
+            display: block;
+            margin: 20px 0;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <a href="#about" onclick="toggleMenu()">About Me</a>
+            <a href="#experience" onclick="toggleMenu()">Professional Experience</a>
+            <a href="#skills" onclick="toggleMenu()">Key Skills</a>
+            <a href="#github" onclick="toggleMenu()">GitHub Contributions</a>
+        </div>
+    </div>
+
     <div class="header">
         <img src="https://lh6.googleusercontent.com/--f1o6IVSYXA/AAAAAAAAAAI/AAAAAAAAA2w/DUv0hzhgCYg/photo.jpg?sz=256" alt="Evgeniy Rezanov" class="profile-photo">
         <div>
@@ -90,23 +133,23 @@
         <a href="https://www.linkedin.com/in/evgeniy-rezanov" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/evgrezanov" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://profiles.wordpress.org/redmonkey73" target="_blank" title="WordPress"><i class="fab fa-wordpress"></i></a>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://cal.com/evgrezanov/15min" target="_blank" class="booking-btn">Book a Meeting</a>
         <a href="https://buymeacoffee.com/evgrezanov" target="_blank" title="Buy Me a Coffee">
             <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" class="bmc-btn">
         </a>
     </div>
 
-    <h3>About Me</h3>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://cal.com/evgrezanov/15min" target="_blank" class="booking-btn">Book a Meeting</a>
+    </div>
+
+    <h3 id="about">About Me</h3>
     <p>
         I am Evgeniy, a web developer with a strong background in PHP, JavaScript, and front-end development. 
         I am always eager to learn and expand my skill set, and am currently exploring new technologies such as 
         chatGPT, VueJS, and GatsbyJS.
     </p>
 
-    <h3>Professional Experience</h3>
+    <h3 id="experience">Professional Experience</h3>
     <p>
         Throughout my career, I have developed a wide range of applications and systems, including corporate EMC 
         systems, company document flow management, and more. With expertise in PHP and WordPress, I am highly 
@@ -114,7 +157,7 @@
         Redis, and Memcached.
     </p>
 
-    <h3>Key Skills</h3>
+    <h3 id="skills">Key Skills</h3>
     <div class="skills">
         <span class="skill">PHP</span>
         <span class="skill">JavaScript</span>
@@ -122,15 +165,28 @@
         <span class="skill">WooCommerce</span>
         <span class="skill">MySQL</span>
         <span class="skill">PosgreSQL</span>
-        <span class="skill">MSSQL</span>
+        <span class="skill">MS SQL</span>
         <span class="skill">Redis</span>
+        <span class="skill">Memcached</span>
         <span class="skill">VueJS</span>
+        <span class="skill">GatsbyJS</span>
     </div>
 
-    <h3>GitHub Contributions</h3>
+    <h3 id="github">GitHub Contributions</h3>
     <p>
         My experience and knowledge of web development are reflected in the quality of my code and my attention 
         to detail, which are evident in my GitHub contributions and stats.
     </p>
+
+    <script>
+        function toggleMenu() {
+            var overlay = document.getElementById("overlay");
+            if (overlay.style.display === "flex") {
+                overlay.style.display = "none";
+            } else {
+                overlay.style.display = "flex";
+            }
+        }
+    </script>
 </body>
 </html>
