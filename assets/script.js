@@ -83,6 +83,11 @@ function openLightbox(imageSrc) {
     lightboxImg.src = imageSrc;
 }
 
+// Закрытие лайтбокса при клике на крестик
+document.querySelector('.close').onclick = function() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
 // Функция для загрузки статистики GitHub
 function loadGitHubStats() {
     const username = 'evgrezanov';
