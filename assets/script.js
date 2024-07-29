@@ -170,11 +170,6 @@ window.onscroll = function() {
     }
 };
 
-// Закрытие лайтбокса при клике на крестик
-document.querySelector('.close').onclick = function() {
-    document.getElementById('lightbox').style.display = 'none';
-}
-
 // Закрытие лайтбокса при клике вне изображения
 window.onclick = function(event) {
     if (event.target == document.getElementById('lightbox')) {
