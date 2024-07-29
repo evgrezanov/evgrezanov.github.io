@@ -67,8 +67,6 @@ function loadReviews() {
     reviewsData.forEach((review, index) => {
         const reviewCard = document.createElement('div');
         reviewCard.className = 'review-card';
-        reviewCard.style.width = `${review.width}px`;
-        reviewCard.style.height = `${review.height}px`;
         reviewCard.innerHTML = `<img src="${review.image}" alt="Client Review ${index + 1}">`;
         reviewCard.onclick = () => openLightbox(review.image);
         reviewsContainer.appendChild(reviewCard);
