@@ -36,11 +36,30 @@ function loadSkills() {
 // Функция для загрузки отзывов
 function loadReviews() {
     const reviewsData = [
-        { "image": "review1.jpg", "width": 300, "height": 150 },
-        { "image": "review2.jpg", "width": 300, "height": 250 },
-        { "image": "review3.jpg", "width": 300, "height": 250 },
-        { "image": "review4.jpg", "width": 300, "height": 200 },
-        { "image": "review5.jpg", "width": 300, "height": 300 }
+        { "image": "review1.png", "width": 300, "height": 150 },
+        { "image": "review2.png", "width": 300, "height": 250 },
+        { "image": "review3.png", "width": 300, "height": 250 },
+        { "image": "review4.png", "width": 300, "height": 200 },
+        { "image": "review5.png", "width": 300, "height": 300 },
+        { "image": "review6.png", "width": 300, "height": 150 },
+        { "image": "review7.png", "width": 300, "height": 250 },
+        { "image": "review8.png", "width": 300, "height": 250 },
+        { "image": "review9.png", "width": 300, "height": 200 },
+        { "image": "review10.png", "width": 300, "height": 300 },     
+        { "image": "review11.png", "width": 300, "height": 150 },
+        { "image": "review12.png", "width": 300, "height": 250 },
+        { "image": "review13.png", "width": 300, "height": 250 },
+        { "image": "review14.png", "width": 300, "height": 200 },
+        { "image": "review15.png", "width": 300, "height": 300 },
+        { "image": "review16.png", "width": 300, "height": 150 },
+        { "image": "review17.png", "width": 300, "height": 250 },
+        { "image": "review18.png", "width": 300, "height": 250 },
+        { "image": "review19.png", "width": 300, "height": 200 },
+        { "image": "review20.png", "width": 300, "height": 300 },
+        { "image": "review21.png", "width": 300, "height": 150 },
+        { "image": "review22.png", "width": 300, "height": 250 },
+        { "image": "review23.png", "width": 300, "height": 250 },
+        { "image": "review24.png", "width": 300, "height": 200 }
     ];
 
     const reviewsContainer = document.getElementById('reviewsContainer');
