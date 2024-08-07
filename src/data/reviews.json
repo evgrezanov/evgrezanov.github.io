@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "projectTitle": "Extra programming on gratis-lezen",
+      "clientName": "Client 1",
+      "rating": 5,
+      "date": "Oct 11, 2016 - Oct 17, 2016",
+      "comment": "Great and swift work from Evgenii, great simple and straight forward communication and a great job again.",
+      "price": 85.00,
+      "priceType": "Fixed price"
+    },
+    {
+      "id": 2,
+      "projectTitle": "Build a user generated story website with limited possibilities with WordPress CMS",
+      "clientName": "Client 2",
+      "rating": 5,
+      "date": "Sep 26, 2016 - Oct 6, 2016",
+      "comment": "Evgenii, is fast and to the point. He build everything I wanted with clear and good deadlines. I liked working with him and he did a great job on building my WordPress site. Love the results.",
+      "price": 350.00,
+      "priceType": "Fixed price"
+    },
+    {
+      "id": 3,
+      "projectTitle": "WordPress Plugin Developer Needed for adjusting an existing plugin",
+      "clientName": "Client 3",
+      "rating": 5,
+      "date": "Sep 20, 2016 - Sep 21, 2016",
+      "comment": "Great work on adjusting the plugin. Quick and efficient.",
+      "price": 75.00,
+      "priceType": "Fixed price"
+    },
+    {
+      "id": 4,
+      "projectTitle": "WordPress ACF content export and mapping to new database and structure",
+      "clientName": "Client 4",
+      "rating": 5,
+      "date": "Feb 20, 2017 - Feb 23, 2017",
+      "comment": "Good job, delivered in quickly.",
+      "price": 200.00,
+      "priceType": "Fixed price"
+    },
+    {
+      "id": 5,
+      "projectTitle": "Make Customization to WordPress Plugin",
+      "clientName": "Client 5",
+      "rating": 5,
+      "date": "Jan 31, 2017 - Feb 3, 2017",
+      "comment": "Excellent work on customizing the plugin. Met all requirements.",
+      "price": 150.00,
+      "priceType": "Fixed price"
+    }
+  ]
