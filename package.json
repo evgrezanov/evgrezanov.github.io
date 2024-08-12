@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^5.3.4"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
   }
 }
