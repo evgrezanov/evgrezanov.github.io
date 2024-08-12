@@ -5,6 +5,12 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+        output: {
+            manualChunks: undefined,
+        }
+    }
   },
   // Здесь можно добавить дополнительные настройки по мере необходимости
 })
