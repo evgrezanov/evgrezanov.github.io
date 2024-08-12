@@ -1,8 +1,9 @@
 // /src/utils/reviews.js
+// https://ibik1t8iqh8ajiw5.public.blob.vercel-storage.com/reviews-IZ4ivrEDidVymsRYl8mVkRywV7ObnH.json
 
 export async function loadReviews() {
     try {
-      const response = await fetch('/src/data/reviews.json');
+      const response = await fetch('https://ibik1t8iqh8ajiw5.public.blob.vercel-storage.com/reviews-IZ4ivrEDidVymsRYl8mVkRywV7ObnH.json');
       const reviews = await response.json();
       const reviewsContainer = document.getElementById('reviewsContainer');
       
