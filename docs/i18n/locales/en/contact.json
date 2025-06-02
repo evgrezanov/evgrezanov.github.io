@@ -1,0 +1,20 @@
+{
+  "title": "Contact me",
+  "description": "Let's talk about your ideas, projects or anything else",
+  "fullname": "Fullname",
+  "email": "Email",
+  "phone": "Phone",
+  "subject": "Subject of your message",
+  "message": "Message",
+  "submit": "Send",
+  "disabled": "You must set your resend API key",
+  "success": "Your message has been sent successfully",
+  "error": "Oups, an error occurred while sending your message",
+  "budget": "Budget",
+  "subject_types": {
+    "project": "Talk about a project",
+    "bug": "Report a bug",
+    "question": "Ask a question",
+    "other": "Other"
+  }
+}
