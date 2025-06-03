@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.3.4"
+    "vite": "^5.4.19"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.12"
