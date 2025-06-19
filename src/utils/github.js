@@ -6,7 +6,17 @@ export function loadGitHubStats() {
   const username = "evgrezanov";
 
   fetch(`https://api.github.com/users/${username}`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        if (response.status === 403) {
+          throw new Error(
+            "GitHub API rate limit exceeded. Please try again later.",
+          );
+        }
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       const statsContainer = document.getElementById("githubStats");
       if (!statsContainer) {
@@ -33,7 +43,16 @@ export function loadGitHubStats() {
                 </div>
             `;
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.error("GitHub Stats Error:", error.message);
+      const statsContainer = document.getElementById("githubStats");
+      if (statsContainer) {
+        statsContainer.innerHTML = `
+                    <h4>Account Overview</h4>
+                    <p style="color: #666; font-style: italic;">GitHub stats temporarily unavailable. ${error.message.includes("rate limit") ? "API rate limit exceeded." : "Please try again later."}</p>
+                `;
+      }
+    });
 
   fetch(`https://api.github.com/users/${username}/repos`)
     .then((response) => {
