@@ -127,9 +127,46 @@ h3 {
 
 /* Стили для карточек отзывов */
 .reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  margin: 0 20px;
+  justify-content: flex-end;
+}
+
+.reviews-row {
+  display: flex;
+  gap: 20px;
+}
+
+.reviews-row .review-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+}
+
+.reviews-row .review-column.left {
+  width: 67%;
+  margin-left: 0;
+}
+
+.reviews-row .review-column.right {
+  width: 33%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .reviews-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .reviews-row .review-column.left,
+  .reviews-row .review-column.right {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .review-card {
