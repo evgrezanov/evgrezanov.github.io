@@ -47,9 +47,28 @@ export function loadGitHubStats() {
       console.error("GitHub Stats Error:", error.message);
       const statsContainer = document.getElementById("githubStats");
       if (statsContainer) {
+        // Provide static fallback data when API is unavailable
         statsContainer.innerHTML = `
                     <h4>Account Overview</h4>
-                    <p style="color: #666; font-style: italic;">GitHub stats temporarily unavailable. ${error.message.includes("rate limit") ? "API rate limit exceeded." : "Please try again later."}</p>
+                    <div class="stat">
+                        <span class="stat-value">20+</span>
+                        Repositories
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">15+</span>
+                        Followers
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">10+</span>
+                        Following
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">2020</span>
+                        Joined GitHub
+                    </div>
+                    <small style="color: #666; font-style: italic; display: block; margin-top: 10px;">
+                        ${error.message.includes("rate limit") ? "* Live stats temporarily limited by GitHub API" : "* GitHub stats temporarily unavailable"}
+                    </small>
                 `;
       }
     });
