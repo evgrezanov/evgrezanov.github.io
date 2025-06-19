@@ -33,6 +33,14 @@ h3 {
   margin: 0 auto;
 }
 
+@media (max-width: 640px) {
+  .profile-photo {
+    margin-top: 20px;
+    height: 103px;
+    padding: 20px;
+  }
+}
+
 .contact-links {
   display: flex;
   justify-content: center;
