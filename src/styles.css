@@ -84,6 +84,14 @@ h3 {
   margin: 10px 20px 20px;
 }
 
+#skills h2 {
+  margin-left: 20px;
+}
+
+#reviews h2 {
+  margin: 0 0 20px 20px;
+}
+
 .contact-links {
   display: flex;
   justify-content: center;
