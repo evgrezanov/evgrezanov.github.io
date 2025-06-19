@@ -39,6 +39,10 @@ h3 {
     height: 103px;
     padding: 20px;
   }
+
+  .site-title {
+    padding-top: 20px;
+  }
 }
 
 .contact-links {
@@ -74,7 +78,7 @@ h3 {
   background-color: #27ae60;
 }
 
-/* Стили для карточек отзывов */
+/* Стили д��я карточек отзывов */
 .reviews {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
