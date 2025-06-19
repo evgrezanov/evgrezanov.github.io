@@ -20,6 +20,12 @@ h3 {
   margin-bottom: 40px;
 }
 
+@media (max-width: 640px) {
+  .site-header {
+    text-align: center;
+  }
+}
+
 .avatar {
   display: flex;
   flex-direction: column;
