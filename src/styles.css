@@ -67,6 +67,23 @@ h3 {
   }
 }
 
+/* Content section spacing */
+#about h2 {
+  margin-left: 20px;
+}
+
+#about p {
+  margin: 0 20px;
+}
+
+#experience h2 {
+  margin: 20px 0 0 20px;
+}
+
+#experience p {
+  margin: 10px 20px 20px;
+}
+
 .contact-links {
   display: flex;
   justify-content: center;
