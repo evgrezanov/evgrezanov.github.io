@@ -136,9 +136,34 @@ export function loadGitHubStats() {
       console.error("GitHub Languages Error:", error.message);
       const languagesContainer = document.getElementById("githubLanguages");
       if (languagesContainer) {
+        // Provide static fallback programming languages
+        const fallbackLanguages = [
+          { name: "PHP", percentage: 45, color: "#777bb4" },
+          { name: "JavaScript", percentage: 30, color: "#f7df1e" },
+          { name: "HTML", percentage: 15, color: "#e34f26" },
+          { name: "CSS", percentage: 7, color: "#1572b6" },
+          { name: "Vue", percentage: 3, color: "#4fc08d" },
+        ];
+
+        let languagesHTML = "";
+        fallbackLanguages.forEach(({ name, percentage, color }) => {
+          languagesHTML += `
+                        <div>
+                            <div class="language-bar" style="width: ${percentage}%; background-color: ${color};"></div>
+                            <div class="language-name">
+                                <span>${name}</span>
+                                <span>${percentage}%</span>
+                            </div>
+                        </div>
+                    `;
+        });
+
         languagesContainer.innerHTML = `
                     <h3>Top Languages</h3>
-                    <p style="color: #666; font-style: italic;">Language stats temporarily unavailable. ${error.message.includes("rate limit") ? "API rate limit exceeded." : "Please try again later."}</p>
+                    ${languagesHTML}
+                    <small style="color: #666; font-style: italic; display: block; margin-top: 10px;">
+                        ${error.message.includes("rate limit") ? "* Live language stats temporarily limited by GitHub API" : "* Language stats temporarily unavailable"}
+                    </small>
                 `;
       }
     });
