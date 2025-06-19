@@ -51,6 +51,10 @@ export function loadGitHubStats() {
 
       Promise.all(promises).then(() => {
         const languagesContainer = document.getElementById("githubLanguages");
+        if (!languagesContainer) {
+          console.warn('Element with id "githubLanguages" not found');
+          return;
+        }
         const totalBytes = Object.values(languages).reduce((a, b) => a + b, 0);
         const topLanguages = Object.entries(languages)
           .sort((a, b) => b[1] - a[1])
