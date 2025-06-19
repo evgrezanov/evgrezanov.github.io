@@ -5,6 +5,72 @@ import { getRandomColor } from "./colors.js";
 export function loadGitHubStats() {
   const username = "evgrezanov";
 
+  // Set a timeout to show fallback content if API calls take too long or fail
+  setTimeout(() => {
+    const statsContainer = document.getElementById("githubStats");
+    const languagesContainer = document.getElementById("githubLanguages");
+
+    // Only show fallback if containers are empty (meaning API failed)
+    if (statsContainer && statsContainer.innerHTML.trim() === "") {
+      console.log("Showing fallback stats due to timeout/failure");
+      statsContainer.innerHTML = `
+                <h4>Account Overview</h4>
+                <div class="stat">
+                    <span class="stat-value">20+</span>
+                    Repositories
+                </div>
+                <div class="stat">
+                    <span class="stat-value">15+</span>
+                    Followers
+                </div>
+                <div class="stat">
+                    <span class="stat-value">10+</span>
+                    Following
+                </div>
+                <div class="stat">
+                    <span class="stat-value">2020</span>
+                    Joined GitHub
+                </div>
+                <small style="color: #666; font-style: italic; display: block; margin-top: 10px;">
+                    * Live stats temporarily limited by GitHub API
+                </small>
+            `;
+    }
+
+    if (languagesContainer && languagesContainer.children.length <= 1) {
+      // Only has h3 title
+      console.log("Showing fallback languages due to timeout/failure");
+      const fallbackLanguages = [
+        { name: "PHP", percentage: 45, color: "#777bb4" },
+        { name: "JavaScript", percentage: 30, color: "#f7df1e" },
+        { name: "HTML", percentage: 15, color: "#e34f26" },
+        { name: "CSS", percentage: 7, color: "#1572b6" },
+        { name: "Vue", percentage: 3, color: "#4fc08d" },
+      ];
+
+      let languagesHTML = "";
+      fallbackLanguages.forEach(({ name, percentage, color }) => {
+        languagesHTML += `
+                    <div>
+                        <div class="language-bar" style="width: ${percentage}%; background-color: ${color};"></div>
+                        <div class="language-name">
+                            <span>${name}</span>
+                            <span>${percentage}%</span>
+                        </div>
+                    </div>
+                `;
+      });
+
+      languagesContainer.innerHTML = `
+                <h3>Top Languages</h3>
+                ${languagesHTML}
+                <small style="color: #666; font-style: italic; display: block; margin-top: 10px;">
+                    * Live language stats temporarily limited by GitHub API
+                </small>
+            `;
+    }
+  }, 2000); // Wait 2 seconds for API calls to complete
+
   fetch(`https://api.github.com/users/${username}`)
     .then((response) => {
       if (!response.ok) {
