@@ -36,8 +36,19 @@ export function loadGitHubStats() {
     .catch((error) => console.error("Error:", error));
 
   fetch(`https://api.github.com/users/${username}/repos`)
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((repos) => {
+      // Check if repos is actually an array
+      if (!Array.isArray(repos)) {
+        console.error("GitHub API did not return an array of repos:", repos);
+        return;
+      }
+
       let languages = {};
       let promises = repos.map((repo) =>
         fetch(repo.languages_url)
