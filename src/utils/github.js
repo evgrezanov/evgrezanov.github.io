@@ -137,8 +137,12 @@ export function loadGitHubStats() {
       });
     })
     .catch((error) => {
-      console.error("GitHub Languages Error:", error.message);
+      console.log(
+        "GitHub Languages API unavailable, showing fallback data:",
+        error.message,
+      );
       const languagesContainer = document.getElementById("githubLanguages");
+      console.log("Languages container found:", !!languagesContainer);
       if (languagesContainer) {
         // Provide static fallback programming languages
         const fallbackLanguages = [
