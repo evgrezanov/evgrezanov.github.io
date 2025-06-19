@@ -113,5 +113,14 @@ export function loadGitHubStats() {
         languagesContainer.innerHTML += languagesHTML;
       });
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.error("GitHub Languages Error:", error.message);
+      const languagesContainer = document.getElementById("githubLanguages");
+      if (languagesContainer) {
+        languagesContainer.innerHTML = `
+                    <h3>Top Languages</h3>
+                    <p style="color: #666; font-style: italic;">Language stats temporarily unavailable. ${error.message.includes("rate limit") ? "API rate limit exceeded." : "Please try again later."}</p>
+                `;
+      }
+    });
 }
