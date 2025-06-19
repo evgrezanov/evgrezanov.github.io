@@ -44,8 +44,12 @@ export function loadGitHubStats() {
             `;
     })
     .catch((error) => {
-      console.error("GitHub Stats Error:", error.message);
+      console.log(
+        "GitHub API unavailable, showing fallback stats:",
+        error.message,
+      );
       const statsContainer = document.getElementById("githubStats");
+      console.log("Stats container found:", !!statsContainer);
       if (statsContainer) {
         // Provide static fallback data when API is unavailable
         statsContainer.innerHTML = `
