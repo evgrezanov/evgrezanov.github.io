@@ -190,6 +190,12 @@ h3 {
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 640px) {
+  .review-card {
+    margin-bottom: 20px;
+  }
+}
+
 .review-card:hover {
   transform: translateY(-5px);
 }
