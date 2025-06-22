@@ -14,6 +14,5 @@ window.toggleMenu = toggleMenu;
 window.onload = function () {
   loadSkills();
   loadReviews();
-  loadGitHubStats();
   setupStickyHeader();
 };
