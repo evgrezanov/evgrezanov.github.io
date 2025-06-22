@@ -65,6 +65,18 @@ h3 {
     min-height: 200px;
     margin: 0 auto 0 calc(50% - 50vw);
   }
+
+  #skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #skillsContainer {
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+  }
 }
 
 /* Content section spacing */
@@ -330,7 +342,7 @@ h3 {
 }
 
 .skill:hover i {
-  transform: scale(1.1); /* Добавили эффект увеличения при наведении */
+  transform: scale(1.1); /* Добавили эффект увеличения при н��ведении */
 }
 
 .skill span {
