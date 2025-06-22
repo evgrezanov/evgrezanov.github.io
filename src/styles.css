@@ -64,6 +64,7 @@ h3 {
     max-width: 500px;
     min-height: 200px;
     margin: 0 auto 0 calc(50% - 50vw);
+    padding: 0 20px;
   }
 
   #skills {
