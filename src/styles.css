@@ -195,6 +195,12 @@ h3 {
   transition: transform 0.3s ease;
 }
 
+.review-item {
+  border-width: 2px;
+  border-style: solid;
+  opacity: 0.75;
+}
+
 @media (max-width: 640px) {
   .review-card {
     margin-bottom: 20px;

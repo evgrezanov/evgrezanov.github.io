@@ -22,7 +22,7 @@ export async function loadReviews() {
         reviews.find((r) => r.projectTitle.includes("WordPress CMS")) ||
         reviews[0];
       const leftReviewCard = document.createElement("div");
-      leftReviewCard.className = "review-card";
+      leftReviewCard.className = "review-card review-item";
       leftReviewCard.innerHTML = `
           <h3 class="project-title">${featuredReview.projectTitle}</h3>
           <div class="review-meta">
