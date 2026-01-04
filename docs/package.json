@@ -27,7 +27,7 @@
     "@nuxtjs/seo": "^3.0.3",
     "@vueuse/core": "13.3.0",
     "@vueuse/nuxt": "13.3.0",
-    "nuxt": "3.17.4",
+    "nuxt": "3.19.0",
     "resend": "4.5.1",
     "sitemap": "8.0.0",
     "ufo": "^1.6.1",
